@@ -1,0 +1,128 @@
+baseURL = 'https://guanchao.github.io/'
+languageCode = 'zh-cn'
+title = 'Shuwoom的博客'
+theme = 'hugo-theme-stack'
+
+# 设置默认语言
+defaultContentLanguage = 'zh-cn'
+
+# 分页配置
+[pagination]
+  pagerSize = 10
+
+# 版权信息
+copyright = "© {year} Shuwoom"
+
+[params]
+  # 主颜色
+  mainSections = ['post']
+  
+  # 网站描述
+  description = "记录学习与思考"
+  
+  # 文章目录配置
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+    [params.article.license]
+      enabled = true
+      default = "Licensed under CC BY-NC-SA 4.0"
+
+  # 评论系统（可选配置）
+  [params.comments]
+    enabled = false
+    provider = "giscus"
+
+  # 侧边栏配置
+  [params.sidebar]
+    emoji = "🍥"
+    subtitle = "记录生活，分享知识"
+    
+    [params.sidebar.avatar]
+      enabled = true
+      local = true
+      src = "img/avatar.jpg"
+
+  # 页脚配置
+  [params.footer]
+    since = 2026
+    customText = ""
+
+  # 代码高亮
+  [params.article.code]
+    maxShownLines = 60
+
+# 右侧边栏小部件配置 - 主页
+[[params.widgets.homepage]]
+  type = "search"
+[[params.widgets.homepage]]
+  type = "archives"
+[[params.widgets.homepage]]
+  type = "tag-cloud"
+[[params.widgets.homepage]]
+  type = "categories"
+
+# 右侧边栏小部件配置 - 文章页面
+[[params.widgets.page]]
+  type = "toc"
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "主页"
+    url = "/"
+    weight = 1
+    [menu.main.params]
+      icon = "home"
+
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives"
+    weight = 2
+    [menu.main.params]
+      icon = "archives"
+
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search"
+    weight = 3
+    [menu.main.params]
+      icon = "search"
+
+  [[menu.main]]
+    identifier = "about"
+    name = "关于我"
+    url = "/about"
+    weight = 4
+    [menu.main.params]
+      icon = "user"
+
+# 分类法配置
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Markdown渲染配置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+# 输出格式
+[outputs]
+  home = ["HTML", "RSS"]
