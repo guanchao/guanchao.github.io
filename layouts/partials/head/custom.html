@@ -6,7 +6,7 @@
 {{ end }}
 
 {{- /* 作者信息 */ -}}
-{{ with .Site.Author.name }}
+{{ with .Site.Params.author.name }}
 <meta name="author" content="{{ . }}">
 {{ end }}
 
@@ -45,7 +45,7 @@
   "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
   "author": {
     "@type": "Person",
-    "name": "{{ .Site.Author.name }}",
+    "name": "{{ .Site.Params.author.name }}",
     "url": "{{ .Site.BaseURL }}about/"
   },
   "publisher": {
@@ -74,7 +74,7 @@
   "url": "{{ .Site.BaseURL }}",
   "author": {
     "@type": "Person",
-    "name": "{{ .Site.Author.name }}"
+    "name": "{{ .Site.Params.author.name }}"
   },
   "potentialAction": {
     "@type": "SearchAction",

@@ -1,4 +1,4 @@
-baseURL = 'https://guanchao.github.io/'
+baseURL = 'https://shuwoom.com/'
 languageCode = 'zh-cn'
 title = 'Shuwoom的博客 - 技术分享与思考'
 theme = 'hugo-theme-stack'
@@ -10,10 +10,6 @@ canonifyURLs = true
 # 设置默认语言
 defaultContentLanguage = 'zh-cn'
 
-# 作者信息
-[author]
-  name = "Shuwoom"
-  email = "shuwoom.wgc@gmail.com"
 
 # 分页配置
 [pagination]
@@ -23,6 +19,11 @@ defaultContentLanguage = 'zh-cn'
 copyright = "© {year} Shuwoom"
 
 [params]
+  # 作者信息 (SEO)
+  [params.author]
+    name = "Shuwoom"
+    email = "shuwoom.wgc@gmail.com"
+  
   # 主颜色
   mainSections = ['post']
   
