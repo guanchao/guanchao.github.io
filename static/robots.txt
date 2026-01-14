@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://guanchao.github.io/sitemap.xml
+
+# 禁止爬取的路径
+Disallow: /page/
+Disallow: /tags/
+Disallow: /categories/
+
+# 主要搜索引擎
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /

@@ -1,10 +1,19 @@
 baseURL = 'https://guanchao.github.io/'
 languageCode = 'zh-cn'
-title = 'Shuwoom的博客'
+title = 'Shuwoom的博客 - 技术分享与思考'
 theme = 'hugo-theme-stack'
+
+# SEO 优化
+enableRobotsTXT = true
+canonifyURLs = true
 
 # 设置默认语言
 defaultContentLanguage = 'zh-cn'
+
+# 作者信息
+[author]
+  name = "Shuwoom"
+  email = "shuwoom.wgc@gmail.com"
 
 # 分页配置
 [pagination]
@@ -17,8 +26,21 @@ copyright = "© {year} Shuwoom"
   # 主颜色
   mainSections = ['post']
   
-  # 网站描述
-  description = "记录学习与思考"
+  # 网站描述 (SEO)
+  description = "Shuwoom的技术博客，分享 AI Agent、LLM、后端开发、工作流引擎等技术文章，记录学习与思考。"
+  keywords = ["技术博客", "AI", "LLM", "Agent", "后端开发", "工作流引擎", "Gemini", "编程"]
+  
+  # Open Graph / Twitter Card
+  [params.opengraph]
+    [params.opengraph.twitter]
+      card = "summary_large_image"
+  
+  # 默认图片
+  [params.defaultImage]
+    [params.defaultImage.opengraph]
+      enabled = true
+      local = true
+      src = "img/avatar.jpg"
   
   # 文章目录配置
   [params.article]
@@ -123,6 +145,18 @@ copyright = "© {year} Shuwoom"
     ordered = false
     startLevel = 2
 
-# 输出格式
+# 输出格式 (包含 Sitemap)
 [outputs]
   home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+# Sitemap 配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# SEO 相关服务配置
+[services]
+  [services.googleAnalytics]
+    # ID = "G-XXXXXXXXXX"  # 如果有 Google Analytics，取消注释并填入 ID

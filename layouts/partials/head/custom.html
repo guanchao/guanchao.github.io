@@ -1,0 +1,86 @@
+{{- /* 自定义 head 内容 - SEO 优化 */ -}}
+
+{{- /* 关键词 meta 标签 */ -}}
+{{ with .Site.Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}">
+{{ end }}
+
+{{- /* 作者信息 */ -}}
+{{ with .Site.Author.name }}
+<meta name="author" content="{{ . }}">
+{{ end }}
+
+{{- /* 规范链接 */ -}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{- /* 额外的 Open Graph 标签 */ -}}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="zh_CN">
+
+{{- /* 文章特定的 meta */ -}}
+{{ if .IsPage }}
+  {{ with .Description }}
+  <meta name="description" content="{{ . }}">
+  {{ else }}
+  <meta name="description" content="{{ .Summary | plainify | truncate 160 }}">
+  {{ end }}
+  
+  {{ with .Params.tags }}
+  <meta property="article:tag" content="{{ delimit . ", " }}">
+  {{ end }}
+  
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ with .Lastmod }}
+  <meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ end }}
+{{ end }}
+
+{{- /* 结构化数据 - JSON-LD */ -}}
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}",
+    "url": "{{ .Site.BaseURL }}about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}img/avatar.jpg"
+    }
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+}
+</script>
+{{ else if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "description": "{{ .Site.Params.description }}",
+  "url": "{{ .Site.BaseURL }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ .Site.BaseURL }}search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{ end }}
