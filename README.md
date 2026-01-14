@@ -1,4 +1,4 @@
-# Shuwoom的博客
+# guanchao的博客
 
 基于 Hugo + Stack 主题搭建的个人博客，自动部署到 GitHub Pages。
 
@@ -8,7 +8,7 @@
 
 ```bash
 git clone https://github.com/guanchao/guanchao.github.io.git
-cd shuwoom.github.io
+cd guanchao.github.io
 ```
 
 ### 2. 初始化主题
@@ -161,7 +161,7 @@ hugo
 [[params.sidebar.social]]
   identifier = "github"
   name = "GitHub"
-  url = "https://github.com/shuwoom"
+  url = "https://github.com/guanchao"
   params:
     icon = "brand-github"
 ```
