@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://guanchao.github.io/sitemap.xml
+Sitemap: https://shuwoom.com/sitemap.xml
 
 # 禁止爬取的路径
 Disallow: /page/
