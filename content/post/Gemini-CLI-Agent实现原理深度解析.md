@@ -10,7 +10,7 @@ tags:
   - CLI
   - 源码分析
 categories:
-  - 技术
+  - Agent
   - AI
 ---
 
