@@ -1,5 +1,8 @@
 {{- /* 自定义 head 内容 - SEO 优化 */ -}}
 
+{{- /* 不蒜子访问量统计 */ -}}
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 {{- /* 关键词 meta 标签 */ -}}
 {{ with .Site.Params.keywords }}
 <meta name="keywords" content="{{ delimit . ", " }}">
