@@ -52,10 +52,24 @@ copyright = "© {year} Shuwoom"
       enabled = true
       default = "Licensed under CC BY-NC-SA 4.0"
 
-  # 评论系统（可选配置）
+  # 评论系统 - Giscus (基于 GitHub Discussions)
   [params.comments]
-    enabled = false
+    enabled = true
     provider = "giscus"
+
+    [params.comments.giscus]
+      repo = "guanchao/guanchao.github.io"
+      repoID = "R_kgDOQ5tVQA"
+      category = "Announcements"
+      categoryID = "DIC_kwDOQ5tVQM4C1zQ-"
+      mapping = "pathname"
+      strict = 0
+      reactionsEnabled = 1
+      emitMetadata = 0
+      inputPosition = "bottom"
+      lightTheme = "light"
+      darkTheme = "dark_dimmed"
+      lang = "zh-CN"
 
   # 侧边栏配置
   [params.sidebar]
