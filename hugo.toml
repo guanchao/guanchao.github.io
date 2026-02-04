@@ -19,6 +19,9 @@ defaultContentLanguage = 'zh-cn'
 copyright = "© {year} Shuwoom"
 
 [params]
+  # 网站图标 (Favicon)
+  favicon = "/img/avatar.jpg"
+
   # 作者信息 (SEO)
   [params.author]
     name = "Shuwoom"
